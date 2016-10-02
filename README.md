@@ -1,24 +1,5 @@
-# README
+An expanded ToDo app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was built by Brinder Dhaliwal, following iridakos tutorial for a simple ToDo app.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(Will improve this read me soon..)
