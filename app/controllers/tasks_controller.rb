@@ -22,12 +22,11 @@ def update
   save_task
 end
 
-  def destroy
-    @task = Task.find(params[:id])
-    authorize! :destroy, @task
-    @task.destroy
-    @tasks = Task.all
-  end
+def destroy
+  @task = Task.find(params[:id])
+  @task.destroy
+  @tasks = Task.all
+end
 
  private
 
