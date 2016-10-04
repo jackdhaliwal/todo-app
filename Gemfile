@@ -8,7 +8,12 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'simple_form'
 gem  'bootstrap-datepicker-rails'
+# Authentication with Devise
 
+gem 'devise'
+#CanCan
+gem 'cancan'
+# protect a user’s tasks from being accessed by another user.
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
