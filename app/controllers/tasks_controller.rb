@@ -1,39 +1,37 @@
-
 class TasksController < ApplicationController
-    def new
-      @task = Task.new
-      render :show_form
-    end
+  def new
+    @task = Task.new
+    render :show_form
+  end
 
-def create
-  @task = Task.new(task_params)
-  @task.user = current_user
-  authorize! :create, @task
-  save_task
-end
+  def create
+    @task = Task.new(task_params)
+    @task.user = current_user
+    authorize! :create, @task
+    save_task
+  end
 
-    def edit
-      @task = Task.find(params[:id])
-      authorize! :edit, @task
-      render :show_form
-    end
+  def edit
+    @task = Task.find(params[:id])
+    authorize! :edit, @task
+    render :show_form
+  end
 
+  def update
+    @task = Task.find(params[:id])
+    @task.assign_attributes(task_params)
+    authorize! :update, @task
+    save_task
+  end
 
-def update
-  @task = Task.find(params[:id])
-  @task.assign_attributes(task_params)
-  authorize! :update, @task
-  save_task
-end
+  def destroy
+    @task = Task.find(params[:id])
+    authorize! :destroy, @task
+    @task.destroy
+    @tasks = Task.all
+  end
 
-def destroy
-  @task = Task.find(params[:id])
-  authorize! :destroy, @task
-  @task.destroy
-  @tasks = Task.all
-end
-
- private
+  private
 
   def save_task
     if @task.save
@@ -43,7 +41,6 @@ end
       render :show_form
     end
   end
-
 
   def task_params
     params.require(:task).permit(:title, :note, :completed)
