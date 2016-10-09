@@ -14,3 +14,9 @@
  *= require_tree .
  */
 @import 'bootstrap';
+@import 'bootstrap-responsive';
+
+html, body {background-image: url('road.jpg');
+background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; }
